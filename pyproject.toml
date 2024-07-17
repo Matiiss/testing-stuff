@@ -4,5 +4,19 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "le_test"
-version = "1.0.0dev1"
+version = "1.0.0dev3"
 
+[project.optional-dependencies]
+dev = [
+    "isort",
+    "black",
+]
+
+[tool.isort]
+profile = "black"
+src_paths = ["src", "tests"]
+
+[tool.black]
+line-length = 120
+target-version = ['py311']
+include = '\.pyi?$'
